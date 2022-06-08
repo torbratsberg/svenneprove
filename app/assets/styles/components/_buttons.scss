@@ -1,0 +1,15 @@
+.btn {
+	padding: 10px 20px;
+	background: $red;
+	color: $white;
+	border-radius: 999px;
+	transition: all 0.1s ease-in-out;
+
+	&:after {
+		display: none !important;
+	}
+
+	&:hover {
+		background: $blue;
+	}
+}

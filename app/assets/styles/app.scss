@@ -1,0 +1,40 @@
+@import "../../node_modules/foundation-sites/scss/foundation.scss";
+@import '../../node_modules/sass-mq/mq';
+
+@include foundation-global-styles;
+@include foundation-forms;
+@include foundation-typography;
+@include foundation-flex-grid;
+
+// Colors
+$black:      #000000;
+$white:      #ffffff;
+$light-blue: #F1F1F8;
+$red:        #D34336;
+$blue:       #264653;
+
+body {
+	margin: 0;
+    padding-top: 100px;
+    font-family: 'Sukhumvitset', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Benne', 'Times New Roman', Times, serif;
+}
+
+section {
+	margin: 80px 0;
+	max-width: 100%;
+}
+
+@import "./components/links";
+@import "./components/buttons";
+@import "./components/header";
+@import "./components/footer";
+@import "./blocks/hero";
+@import "./blocks/hero-banner";
+@import "./blocks/text-and-image";
+@import "./blocks/carousel";
+@import "./blocks/two-column-text";
+@import url('https://fonts.googleapis.com/css2?family=Benne&display=swap');
