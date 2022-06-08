@@ -2,7 +2,6 @@ import groq from 'groq'
 import client from '../client'
 import { useState, useEffect } from 'react';
 
-import Logo from '../assets/images/logo.svg';
 import Head from '../components/Head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -16,23 +15,30 @@ function Page({ page, siteSettings }) {
     const [showForm, setShowForm] = useState(false);
 
     useEffect(() => {
-        const observer = new IntersectionObserver((entries, self) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('observed');
-                    self.unobserve(entry.target);
-                }
+        if (typeof IntersectionObserver != 'undefined') {
+            const observer = new IntersectionObserver((entries, self) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('observed');
+                        self.unobserve(entry.target);
+                    }
+                });
+            })
+
+            document.querySelectorAll('.om').forEach(item => {
+                observer.observe(item);
             });
-        })
-        document.querySelectorAll('.om').forEach(item => {
-            observer.observe(item);
-        });
+        } else {
+            document.querySelectorAll('.om').forEach(item => {
+                item.classList.add('observed');
+            });
+        }
     });
 
 	return (
 		<>
 			<Head page={page} />
-			<Header logo={Logo} showForm={showForm} setShowForm={setShowForm} />
+			<Header showForm={showForm} setShowForm={setShowForm} />
             { showForm && <BookingForm setShowForm={setShowForm} /> }
 			<article>
 				{page ? <BlockRouter blocks={page.blocks} /> : <h1>No content</h1>}

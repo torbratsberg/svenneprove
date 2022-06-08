@@ -3,8 +3,9 @@ import Link from 'next/link';
 import { useState, useEffect, createRef } from 'react';
 
 import client from '../client';
+import Logo from '../assets/images/logo.svg';
 
-function Header(props) {
+function Header({ showForm, setShowForm }) {
 	const [pages, setPages] = useState(false);
 	const [menuOpen, setMenuOpen] = useState(false);
 	const menuToggler = createRef();
@@ -38,12 +39,12 @@ function Header(props) {
 				<div className="header-inner column small-12">
 					<div className="right-container">
 						<Link aria-label="Go to front page" href="/" passHref as="/">
-							<img height="63px" width="63px" src={props.logo.src} alt="Company logo" />
+							<img height="63px" width="63px" src={Logo.src} alt="Company logo" />
 						</Link>
 					</div>
 
 					<div className="left-container">
-                        { props.showForm == false ?
+                        { showForm == false ?
                             <>
                                 <button ref={menuToggler} className="btn menu-toggler" aria-label="Toggle menu">Menu</button>
                                 <nav>
@@ -52,11 +53,11 @@ function Header(props) {
                                             <a className="underline">{title}</a>
                                         </Link>
                                     ))}
-                                    <button className="btn" onClick={() => props.setShowForm(true)}>Book tid</button>
+                                    <button className="btn" onClick={() => setShowForm(true)}>Book tid</button>
                                 </nav>
                             </>
                         :
-                            <button className="btn" onClick={() => props.setShowForm(false)}>Lukk</button>
+                            <button className="btn" onClick={() => setShowForm(false)}>Lukk</button>
                         }
 					</div>
 				</div>
