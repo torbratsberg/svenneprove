@@ -70,7 +70,7 @@ function BookingForm(props) {
                         <p className="required-explainer">* = Obligatorisk</p>
 
                         <form onChange={changeHandler} method="GET" onSubmit={(e) => e.preventDefault()}>
-                            <Field required={true} id="name" label="Name" />
+                            <Field required={true} id="navn" label="Navn" />
                             <Field required={true} id="telefon" label="Telefon" />
                             <Field required={true} id="email" label="Email" type="email" />
                             <Field required={true} id="alder" label="Alder" type="number"/>
