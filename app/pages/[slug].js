@@ -38,7 +38,6 @@ function Page({ page, siteSettings }) {
 				{page ? <BlockRouter blocks={page.blocks} /> : <h1>No content</h1>}
 			</article>
 			<Footer siteSettings={siteSettings} />
-            <script type="text/javascript" src="/public/scripts/om.js"></script>
 		</>
 	)
 }
