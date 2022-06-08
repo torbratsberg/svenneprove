@@ -23,10 +23,10 @@ function Header(props) {
 
 		menuToggler.current.addEventListener('click', () => {
 			if (menuOpen) {
-				document.querySelector('header nav').style.display = 'none';
+				document.querySelector('header nav')?.style.display = 'none';
 				setMenuOpen(false);
 			} else {
-				document.querySelector('header nav').style.display = 'block';
+				document.querySelector('header nav')?.style.display = 'block';
 				setMenuOpen(true);
 			}
 		});
@@ -43,14 +43,21 @@ function Header(props) {
 					</div>
 
 					<div className="left-container">
-						<button ref={menuToggler} className="btn" aria-label="Toggle menu">Menu</button>
-						<nav>
-							{pages && pages?.map(({ title = '', slug = ''}, i) => slug && (
-								<Link key={i} href="/[slug]" as={`/${slug.current}`}>
-									<a className="underline">{title}</a>
-								</Link>
-							))}
-						</nav>
+                        { props.showForm == false ?
+                            <>
+                                <button ref={menuToggler} className="btn menu-toggler" aria-label="Toggle menu">Menu</button>
+                                <nav>
+                                    {pages && pages?.map(({ title = '', slug = ''}, i) => slug && (
+                                        <Link key={i} href="/[slug]" as={`/${slug.current}`}>
+                                            <a className="underline">{title}</a>
+                                        </Link>
+                                    ))}
+                                    <button className="btn" onClick={() => props.setShowForm(true)}>Book tid</button>
+                                </nav>
+                            </>
+                        :
+                            <button className="btn" onClick={() => props.setShowForm(false)}>Lukk</button>
+                        }
 					</div>
 				</div>
 			</div>

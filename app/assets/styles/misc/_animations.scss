@@ -1,0 +1,67 @@
+$animation-speed: 0.7s;
+
+.om {
+    transition: all $animation-speed ease-out;
+
+    &.fade-up {
+        opacity: 0;
+        transform: translateY(15%);
+
+        &.observed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    &.fade-left {
+        opacity: 0;
+        transform: translateX(15%);
+
+        &.observed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    &.fade-right {
+        opacity: 0;
+        transform: translateX(-15%);
+
+        &.observed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    &.fade-down {
+        opacity: 0;
+        transform: translateY(-15%);
+
+        &.observed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    &.fade-in {
+        opacity: 0;
+
+        &.observed {
+            opacity: 1;
+        }
+    }
+
+    &.dash {
+        &:after {
+            transition: all calc($animation-speed * 3) 0.2s ease-in-out;
+            clip-path: polygon(0 0, 0% 0, 0% 100%, 0% 100%);
+
+        }
+
+        &.observed {
+            &:after {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            }
+        }
+    }
+}

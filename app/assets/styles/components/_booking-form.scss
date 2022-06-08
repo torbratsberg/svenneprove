@@ -1,0 +1,116 @@
+.BookingForm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: $white;
+    z-index: 999;
+    padding: 100px 0;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    transform: scale(1.2);
+    overflow-y: auto;
+
+    .inner-wrapper {
+        max-width: 800px;
+        padding: 10px;
+        margin: auto;
+
+        h2 {
+            text-align: center;
+        }
+
+        .required-explainer {
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-auto-flow: row;
+            grid-template-rows: 1fr;
+            grid-gap: 10px;
+
+            @media (max-width: 640px) {
+                grid-template-columns: 100%;
+            }
+
+            input {
+                margin: 0 0 10px 0;
+                padding: 8px 20px;
+                border: none;
+                background: $light-blue;
+                appearance: none;
+                box-shadow: none;
+
+                &::placeholder {
+                    color: $black;
+                    opacity: 0.5;
+                }
+            }
+
+            label {
+                margin: 0 0 0 20px;
+                font-size: 20px;
+                font-family: 'Benne', 'Times New Roman', Times, serif;
+            }
+
+            fieldset {
+                legend {
+                    margin-bottom: 10px;
+                }
+
+                div {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    justify-content: flex-end;
+                    align-items: center;
+                    margin-bottom: 10px;
+
+                    input[type="checkbox"] {
+                        height: 41px;
+                        width: 41px;
+                        margin: 0 5px 0 0;
+                        accent-color: $red;
+
+                        &:checked {
+                            background: orange;
+                        }
+                    }
+
+                    label {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+
+        .sum-wrapper {
+            margin-top: 50px;
+
+            .sum-table {
+                display: grid;
+                grid-template-columns: 50% 50%;
+                grid-auto-flow: row;
+                grid-template-rows: 1fr;
+
+                > div {
+                    padding: 10px;
+                }
+
+                .left {
+                    text-align: right;
+                }
+
+                .left {
+                    text-align: right;
+                }
+            }
+        }
+
+        .info-wrapper {
+            margin-top: 50px;
+        }
+    }
+}

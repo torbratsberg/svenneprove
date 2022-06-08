@@ -13,9 +13,11 @@ a:not(.btn) {
 	}
 
 	&:hover {
+        color: white !important;
+
 		&:after {
-            height: 6px;
-            background: $blue;
+            height: 100%;
+            background: $metal;
 		}
 	}
 }

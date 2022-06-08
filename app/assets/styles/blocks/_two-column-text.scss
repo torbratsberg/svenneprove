@@ -2,4 +2,8 @@
 	padding: 60px 0;
 	background: $light-blue;
 	color: $black;
+
+    h2 {
+        @include dashedUnderline();
+    }
 }

@@ -22,8 +22,8 @@ function Carousel({ block }) {
 
     return (
         <section className="Carousel">
-			<div className="row">
-				<div className="column small-12 large-offset-1 large-10 title-col">
+			<div className="row om fade-in">
+				<div className="column small-12 title-col">
 					<h2>{block.title}</h2>
 
 					<div>
@@ -32,7 +32,7 @@ function Carousel({ block }) {
 					</div>
 				</div>
 
-				<div className="column small-12 large-offset-1 large-10">
+				<div className="column small-12">
 					<div ref={carouselRef} className="swiper">
 						<div className="swiper-wrapper">
 							{block.images.map((slide, i) => slide && (

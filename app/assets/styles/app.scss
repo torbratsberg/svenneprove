@@ -11,7 +11,7 @@ $black:      #000000;
 $white:      #ffffff;
 $light-blue: #F1F1F8;
 $red:        #D34336;
-$blue:       #264653;
+$metal:      #292F36;
 
 body {
 	margin: 0;
@@ -28,10 +28,13 @@ section {
 	max-width: 100%;
 }
 
+@import "./misc/mixins";
+@import "./misc/animations";
 @import "./components/links";
 @import "./components/buttons";
 @import "./components/header";
 @import "./components/footer";
+@import "./components/booking-form";
 @import "./blocks/hero";
 @import "./blocks/hero-banner";
 @import "./blocks/text-and-image";

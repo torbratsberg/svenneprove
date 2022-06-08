@@ -1,95 +1,91 @@
 .Carousel {
-	overflow: hidden;
+    overflow: hidden;
     padding-bottom: 3px;
+    background: $light-blue;
+    padding: 90px 0;
 
-	.title-col {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		margin-bottom: 20px;
+    .title-col {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
 
-		> div {
-			width: 50%;
-			display: flex;
-			align-items: center;
-			justify-content: flex-end;
+        > div {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
 
-			a {
-				display: block;
-				height: 45px;
-				width: 45px;
-				position: relative;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				margin: 0 0 0 20px;
-				text-decoration: none;
+            a {
+                display: block;
+                height: 45px;
+                width: 45px;
+                position: relative;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: 0 0 0 20px;
+                text-decoration: none;
 
-				&:after {
-					font-size: 14px;
-					color: $white;
-					display: unset !important;
-				}
+                &:after {
+                    font-size: 14px;
+                    color: $white;
+                    display: unset !important;
+                }
+            }
+        }
+    }
 
-				&:hover {
-					&:after {
-						color: $black;
-					}
-				}
-			}
-		}
-	}
+    .swiper {
+        overflow: visible;
 
-	.swiper {
-		overflow: visible;
-
-		.swiper-slide {
-			height: 350px;
+        .swiper-slide {
+            height: 350px;
             overflow: visible;
 
-			.slide-content {
-				background: $light-blue;
-				display: grid;
-				grid-template-columns: 40% 60%;
-				height: 100%;
+            .slide-content {
+                background: $light-blue;
+                display: grid;
+                grid-template-columns: 40% 60%;
+                height: 100%;
 
-				.text-col {
-					padding: 25px 20px 10px 20px;
-					color: $white;
-					display: flex;
-					flex-direction: column;
-					justify-content: space-between;
+                .text-col {
+                    padding: 25px 20px 10px 20px;
+                    color: $white;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
 
-					.btm {
-						display: flex;
-						align-items: center;
-						justify-content: space-between;
+                    .btm {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
 
-						@media only screen and (max-width: 640px) {
-							flex-direction: column;
-							align-items: flex-start;
-						}
+                        @media only screen and (max-width: 640px) {
+                            flex-direction: column;
+                            align-items: flex-start;
+                        }
 
-						p {
-							margin: 0;
-							font-weight: 500;
-							font-size: 22px;
+                        p {
+                            margin: 0;
+                            font-weight: 500;
+                            font-size: 22px;
 
-							@media only screen and (max-width: 640px) {
-								margin-bottom: 10px;
-							}
-						}
-					}
-				}
+                            @media only screen and (max-width: 640px) {
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                }
 
-				img {
-					min-width: 100%;
-					min-height: 100%;
-					height: auto;
-					object-fit: cover;
-				}
-			}
-		}
-	}
+                img {
+                    min-width: 100%;
+                    min-height: 100%;
+                    height: auto;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
 }

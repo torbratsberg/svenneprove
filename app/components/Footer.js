@@ -4,7 +4,7 @@ import Logo from '../assets/images/logo.svg';
 function Footer({ siteSettings }) {
 
     return (
-        <footer>
+        <footer className="om">
 			<div className="top">
 				<div className="row">
 					<div className="column small-12 large-3 logo-wrapper">

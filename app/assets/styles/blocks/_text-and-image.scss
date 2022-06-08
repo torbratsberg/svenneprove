@@ -14,17 +14,7 @@
 		}
 
         h2 {
-            position: relative;
-
-            &:after {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                height: 2px;
-                width: 100%;
-                border-bottom: dashed 2px black;
-            }
+            @include dashedUnderline();
         }
 
 		img {
