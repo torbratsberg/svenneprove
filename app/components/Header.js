@@ -23,10 +23,10 @@ function Header(props) {
 
 		menuToggler.current.addEventListener('click', () => {
 			if (menuOpen) {
-				document.querySelector('header nav')?.style.display = 'none';
+				document.querySelector('header nav').style.display = 'none';
 				setMenuOpen(false);
 			} else {
-				document.querySelector('header nav')?.style.display = 'block';
+				document.querySelector('header nav').style.display = 'block';
 				setMenuOpen(true);
 			}
 		});

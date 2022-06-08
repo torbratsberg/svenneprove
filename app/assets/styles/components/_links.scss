@@ -12,9 +12,8 @@ a:not(.btn) {
 		transition: all 0.2s ease-in-out;
 	}
 
+	&:focus,
 	&:hover {
-        color: white !important;
-
 		&:after {
             height: 100%;
             background: $metal;
