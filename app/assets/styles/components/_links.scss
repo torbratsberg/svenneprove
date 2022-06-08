@@ -15,8 +15,7 @@ a:not(.btn) {
 	&:focus,
 	&:hover {
 		&:after {
-            height: 100%;
-            background: $metal;
+            width: 20%;
 		}
 	}
 }
