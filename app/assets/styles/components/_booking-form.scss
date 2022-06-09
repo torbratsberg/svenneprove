@@ -58,7 +58,7 @@
 
             fieldset {
                 legend {
-                    margin-bottom: 10px;
+                    margin: 0;
                 }
 
                 div {
@@ -75,12 +75,17 @@
                         accent-color: $red;
 
                         &:checked {
-                            background: orange;
+                            background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+                            background-size: 70% 70%;
+                            background-position: center center;
+                            background-repeat: no-repeat;
                         }
                     }
 
                     label {
-                        margin-left: 0;
+                        margin-top: 1px;
+                        margin-left: 6px;
+                        font-size: 22px;
                     }
                 }
             }

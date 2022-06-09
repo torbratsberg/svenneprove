@@ -52,6 +52,36 @@ function BookingForm(props) {
         }
     }
 
+    const validators = {
+        text: (input) => {
+            if (input.value == '') return 'Tomt felt';
+        },
+        email: (input) => {
+            if (input.value == '') return 'Tomt felt';
+            if (!(/.+@.+[.].+/g).test(input.value)) return 'Ikke en email adresse';
+        },
+        number: (input) => {
+            if (!input.value) return 'Ikke et tall';
+        },
+        date: (input) => {
+            if (input.value == '') return 'Tomt felt';
+        }
+    }
+
+    const blurHandler = (e) => {
+        const errMsg = (msg) => '<p class="field-error-message">' + msg + '...</p>';
+
+        if (validators[e.target.type]) {
+            e.target.parentElement.querySelectorAll('.field-error-message')
+                .forEach(item => item.remove());
+
+            const err = validators[e.target.type](e.target);
+            if (err) {
+                e.target.insertAdjacentHTML('afterEnd', errMsg(err))
+            }
+        }
+    }
+
     const submit = (e) => {
         e.preventDefault();
 
@@ -66,7 +96,7 @@ function BookingForm(props) {
                         <h2>Book tid</h2>
                         <p className="required-explainer">* = Obligatorisk</p>
 
-                        <form onChange={changeHandler} method="GET" onSubmit={(e) => e.preventDefault()}>
+                        <form onBlur={blurHandler} onChange={changeHandler} method="GET" onSubmit={(e) => e.preventDefault()}>
                             <InputField required={true} id="navn" label="Navn" />
                             <InputField required={true} id="telefon" label="Telefon" />
                             <InputField required={true} id="email" label="Email" type="email" />
@@ -76,7 +106,7 @@ function BookingForm(props) {
                             <InputField required={true} id="dato" label="Dato" type="date" />
 
                             <fieldset>
-                                <legend>Tidspunkt</legend>
+                                <label><legend>Tidspunkt</legend></label>
                                 <InputField id="time-a" label="09:00 - 12:00" type="checkbox" />
                                 <InputField id="time-b" label="12:00 - 15:00" type="checkbox" />
                                 <InputField id="time-c" label="18:00 - 21:00" type="checkbox" />

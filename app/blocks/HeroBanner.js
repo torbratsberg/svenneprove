@@ -31,7 +31,7 @@ function HeroBanner({ block }) {
                 return;
             }
             i++;
-        }, 3000);
+        }, 2500);
     }, [holder.current]);
 
     return (
