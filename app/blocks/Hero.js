@@ -13,7 +13,7 @@ function Hero({block}) {
 				</div>
 
 				<div className="column small-12 medium-6">
-					{block.image && <img src={urlFor(block.image).width(570).url()} alt="" />}
+					{block.image && <img src={urlFor(block.image).width(570).auto('format').url()} alt="" />}
 				</div>
 			</div>
         </div>

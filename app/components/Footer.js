@@ -23,7 +23,7 @@ function Footer({ siteSettings }) {
 
                         <div className="socials-wrapper">
                             {siteSettings?.socials && siteSettings.socials.map((item, i) => item && (
-                                <Link key={i} href={item.url}><a aria-label={`Link to ${label}`} className="btn"><div className={`icon ${item.label}`}></div></a></Link>
+                                <Link key={i} href={item.url}><a aria-label={`Link to ${item.label}`} className="btn"><div className={`icon ${item.label}`}></div></a></Link>
                             ))}
                         </div>
                     </div>
