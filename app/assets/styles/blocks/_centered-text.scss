@@ -2,6 +2,12 @@
     margin: 170px 0;
     text-align: center;
 
+    h2 {
+        width: max-content;
+        margin: 0 auto 20px auto;
+        @include dashedUnderline();
+    }
+
     p {
         margin-bottom: 30px;
     }
