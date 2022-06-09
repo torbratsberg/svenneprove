@@ -37,6 +37,7 @@ export default {
 				{type: 'twocolumntext'},
 				{type: 'centeredtext'},
 				{type: 'keypoints'},
+				{type: 'quotes'},
 			],
 		},
 		{

@@ -16,6 +16,7 @@ import twocolumntext from './twocolumntext';
 import siteSettings from './siteSettings'
 import centeredText from './centeredtext';
 import keypoints from './keypoints';
+import quotes from './quotes';
 
 export default createSchema({
 	name: 'default',
@@ -30,6 +31,7 @@ export default createSchema({
 		twocolumntext,
         centeredText,
         keypoints,
+        quotes,
 		siteSettings,
 	]),
 });

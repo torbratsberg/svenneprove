@@ -1,0 +1,15 @@
+.Quotes {
+    .columns {
+        &:nth-of-type(odd) {
+            text-align: left;
+        }
+
+        &:nth-of-type(even) {
+            text-align: right;
+        }
+    }
+
+    h3 {
+        @include dashedUnderline();
+    }
+}
