@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Logo from '../assets/images/logo.svg';
 
 function Footer({ siteSettings }) {
+    if (!siteSettings) return;
 
     return (
         <footer>
