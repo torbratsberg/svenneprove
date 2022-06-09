@@ -36,6 +36,7 @@ export default {
 				{type: 'carousel'},
 				{type: 'twocolumntext'},
 				{type: 'centeredtext'},
+				{type: 'keypoints'},
 			],
 		},
 		{
