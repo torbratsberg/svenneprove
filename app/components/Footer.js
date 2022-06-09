@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Logo from '../assets/images/logo.svg';
 
 function Footer({ siteSettings }) {
-    if (!siteSettings) return;
+    if (!siteSettings) return <h1 style={{textAlign: 'center'}}>No content</h1>;
 
     return (
         <footer>
