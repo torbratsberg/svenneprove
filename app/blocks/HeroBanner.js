@@ -1,6 +1,6 @@
 import { urlFor } from '../utils';
 import Link from 'next/link';
-import { useEffect, useState, createRef } from 'react';
+import { useEffect, createRef } from 'react';
 
 function HeroBanner({ block }) {
     const holder = createRef();
@@ -26,7 +26,10 @@ function HeroBanner({ block }) {
                 }, 300);
             }, 300);
 
-            if (i == block.words.length - 1) i = 0;
+            if (i == block.words.length - 1) {
+                i = 0;
+                return;
+            }
             i++;
         }, 3000);
     }, [holder.current]);

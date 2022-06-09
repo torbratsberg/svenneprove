@@ -4,6 +4,7 @@ import TextAndImage from '../blocks/TextAndImage';
 import Carousel from '../blocks/Carousel';
 import TwoColumnText from '../blocks/TwoColumnText';
 import CenteredText from '../blocks/CenteredText';
+import KeyPoints from '../blocks/KeyPoints.js';
 
 function BlockRouter({ blocks }) {
 
@@ -23,6 +24,8 @@ function BlockRouter({ blocks }) {
 						return <TwoColumnText key={`block-${block._key}`} block={block} />
 					case 'centeredtext':
 						return <CenteredText key={`block-${block._key}`} block={block} />
+					case 'keypoints':
+						return <KeyPoints key={`block-${block._key}`} block={block} />
 				}
 			})}
         </div>

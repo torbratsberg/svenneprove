@@ -14,7 +14,7 @@ function Footer({ siteSettings }) {
 					</div>
 
 					<div className="column small-12 large-3 contact-info">
-                        {siteSettings.contactinfo && <p dangerouslySetInnerHTML={{__html: siteSettings.contactinfo}}></p>}
+                        {siteSettings.contactinfo && <p>{siteSettings.contactinfo}</p>}
 					</div>
 
 					<div className="column small-12 large-7 right-wrapper">
