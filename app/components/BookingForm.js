@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { createRef } from 'react';
 
 import InputField from './InputField';
 
@@ -22,6 +23,7 @@ function BookingForm(props) {
     const [styles, setStyles] = useState({});
     const [times, setTimes] = useState(0);
     const [submitted, setSubmitted] = useState(0);
+    const form = createRef();
 
     useEffect(() => {
         document.body.style.overflow = 'hidden';
@@ -85,6 +87,14 @@ function BookingForm(props) {
     const submit = (e) => {
         e.preventDefault();
 
+        if (!form.current) return;
+
+        const formData = new FormData(form.current);
+
+        for (let [_name, value] of formData.entries()) {
+            if (value == '') return;
+        }
+
         setSubmitted(true);
     }
 
@@ -96,7 +106,7 @@ function BookingForm(props) {
                         <h2>Book tid</h2>
                         <p className="required-explainer">* = Obligatorisk</p>
 
-                        <form onBlur={blurHandler} onChange={changeHandler} method="GET" onSubmit={(e) => e.preventDefault()}>
+                        <form ref={form} onBlur={blurHandler} onChange={changeHandler} method="GET" onSubmit={(e) => e.preventDefault()}>
                             <InputField required={true} id="navn" label="Navn" />
                             <InputField required={true} id="telefon" label="Telefon" />
                             <InputField required={true} id="email" label="Email" type="email" />

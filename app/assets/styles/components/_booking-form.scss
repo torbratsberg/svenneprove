@@ -48,12 +48,22 @@
                     color: $black;
                     opacity: 0.5;
                 }
+
+                &:active,
+                &:focus {
+                    background: darken($light-blue, 10%);
+                }
             }
 
             label {
                 margin: 0 0 0 20px;
                 font-size: 20px;
                 font-family: 'Benne', 'Times New Roman', Times, serif;
+            }
+
+            .field-error-message {
+                font-size: 16px;
+                font-weight: bold;
             }
 
             fieldset {
