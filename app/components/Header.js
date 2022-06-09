@@ -39,7 +39,7 @@ function Header({ showForm, setShowForm }) {
 				<div className="header-inner column small-12">
 					<div className="right-container">
 						<Link aria-label="Go to front page" href="/" passHref as="/">
-							<img height="63px" width="63px" src={Logo.src} alt="Company logo" />
+							<img height="69px" width="69px" src={Logo.src} alt="Company logo" />
 						</Link>
 					</div>
 
