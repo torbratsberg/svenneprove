@@ -15,34 +15,22 @@ export default {
 			type: 'text'
 		},
 		{
-			name: 'frontpage',
-			title: 'Front page',
-			type: 'reference',
-			to: { type: 'page' }
+
+			name: 'contactinfo',
+			title: 'Contact info',
+			type: 'text',
 		},
 		{
-			name: 'toptexts',
-			title: 'Top texts',
-			type: 'array',
-			of: [
-				{
-					name: 'text',
-					title: 'Text',
-					type: 'text',
-				}
-			]
-		},
-		{
-			name: 'middletexts',
-			title: 'Middle texts',
+			name: 'socials',
+			title: 'Socials',
 			type: 'array',
 			of: [
 				{ type: 'link', }
 			]
 		},
 		{
-			name: 'bottomtexts',
-			title: 'Bottom texts',
+			name: 'links',
+			title: 'Links',
 			type: 'array',
 			of: [
 				{ type: 'link', }

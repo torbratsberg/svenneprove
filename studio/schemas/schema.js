@@ -13,8 +13,8 @@ import textandimage from './textandimage';
 import carousel from './carousel';
 import carouselslide from './carouselslide';
 import twocolumntext from './twocolumntext';
-
 import siteSettings from './siteSettings'
+import centeredText from './centeredtext';
 
 export default createSchema({
 	name: 'default',
@@ -27,6 +27,7 @@ export default createSchema({
 		carousel,
 		carouselslide,
 		twocolumntext,
+        centeredText,
 		siteSettings,
 	]),
 });

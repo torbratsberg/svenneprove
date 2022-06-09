@@ -11,7 +11,7 @@ function TextAndImage({block}) {
 						<div className={`column small-12 medium-6 om fade-${block.reversed ? 'left' : 'right'}`}>
 							{block.title && <h2 className="om dash">{block.title}</h2>}
 							{block.text && <p>{block.text}</p>}
-							{block.link && <Link href={block.link.url}>{block.link.label}</Link>}
+							{block.link && <Link href={block.link.url}><a className="btn">{block.link.label}</a></Link>}
 						</div>
 
 						<div className={`column small-12 medium-6 om fade-${block.reversed ? 'right' : 'left'}`}>

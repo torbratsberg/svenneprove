@@ -8,6 +8,14 @@ export default {
 			title: 'Title',
 			type: 'string',
 		},
+        {
+            name: 'words',
+            title: 'Words',
+            type: 'array',
+            of: [
+                { type: 'string'},
+            ]
+        },
 		{
 			name: 'text',
 			title: 'Text',

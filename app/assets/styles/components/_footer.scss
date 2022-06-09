@@ -2,82 +2,47 @@ footer {
 	background: $light-blue;
 	padding: 0;
 
-	.row > div {
-		p, a {
-			margin: 0;
-			color: $black;
-
-			&:hover {
-				color: $black;
-			}
-
-			&:after {
-				background: $black;
-			}
-		}
-	}
-
 	.top {
 		background: $light-blue;
 		padding: 45px 0;
 
-		.logo-wrapper {
-			@media only screen and (max-width: 640px) {
-				text-align: center;
-			}
-		}
+        .logo-wrapper {
+            img {
+                width: 100%;
 
-		.top-texts-wrapper {
-			@media only screen and (max-width: 1024px) {
-				margin-top: 30px;
-			}
-		}
-
-		p {
-			text-align: center;
-		}
-	}
-	.middle {
-		background: $metal;
-		padding: 30px 0;
-
-        div {
-            a {
-                color: $white;
-
-                &:hover {
-                    color: $white;
-
-                    &:after {
-                        background: $red;
-                    }
+                @media (max-width: 640px) {
+                    width: 50%;
+                    margin: auto;
                 }
+            }
+        }
 
-                &:after {
-                    background: $white;
+        .right-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            .socials-wrapper {
+                display: flex;
+                justify-content: flex-end;
+
+                a {
+                    margin-top: 20px;
+                    margin-left: 20px;
                 }
             }
         }
 	}
+
 	.bottom {
-		background: $light-blue;
+		background: $metal;
 		padding: 22px 0;
 
 		a {
-            color: $black;
+            color: $white;
 			display: block;
 			margin: 0 10px !important;
-		}
-	}
-
-	.flex-center {
-		width: 100%;
-		display: flex;
-		justify-content: space-evenly;
-		align-items: flex-start;
-
-		@media only screen and (max-width: 640px) {
-			flex-wrap: wrap;
 		}
 	}
 

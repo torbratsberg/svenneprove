@@ -45,6 +45,7 @@
                 opacity: 1;
                 transition: all 0.3s ease-in-out;
                 display: inline-block;
+                white-space: nowrap;
 
                 &.fade-out {
                     opacity: 0;

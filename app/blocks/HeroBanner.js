@@ -3,11 +3,10 @@ import Link from 'next/link';
 import { useEffect, useState, createRef } from 'react';
 
 function HeroBanner({ block }) {
-    const words = ['Gjenbruk', 'bærekraft', 'mote'];
     const holder = createRef();
 
     useEffect(() => {
-        holder.current.innerText = words[0];
+        holder.current.innerText = block.words[0];
 
         let i = 0;
         setInterval(() => {
@@ -18,7 +17,7 @@ function HeroBanner({ block }) {
             setTimeout(() => {
                 if (!holder.current) return;
                 holder.current.classList.remove('fade-out');
-                holder.current.innerText = words[i];
+                holder.current.innerText = block.words[i];
                 holder.current.classList.add('fade-in');
 
                 setTimeout(() => {
@@ -27,7 +26,7 @@ function HeroBanner({ block }) {
                 }, 300);
             }, 300);
 
-            if (i == words.length - 1) i = 0;
+            if (i == block.words.length - 1) i = 0;
             i++;
         }, 3000);
     }, [holder.current]);

@@ -35,7 +35,7 @@ export default {
 				{type: 'textandimage'},
 				{type: 'carousel'},
 				{type: 'twocolumntext'},
-				{type: 'productarchive'},
+				{type: 'centeredtext'},
 			],
 		},
 		{

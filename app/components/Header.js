@@ -20,7 +20,7 @@ function Header({ showForm, setShowForm }) {
 	}, []);
 
 	useEffect(() => {
-		if (!menuToggler.current) return;
+		if (!menuToggler.current || window.innerWidth > 640) return;
 
 		menuToggler.current.addEventListener('click', () => {
 			if (menuOpen) {

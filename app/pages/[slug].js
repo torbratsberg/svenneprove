@@ -33,53 +33,66 @@ function Page({ page, siteSettings }) {
                 item.classList.add('observed');
             });
         }
+
+        document.querySelectorAll('a[href*="#open-booking-form"]').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                setShowForm(true);
+            });
+        });
     });
 
-	return (
-		<>
-			<Head page={page} />
-			<Header showForm={showForm} setShowForm={setShowForm} />
-            { showForm && <BookingForm setShowForm={setShowForm} /> }
-			<article>
-				{page ? <BlockRouter blocks={page.blocks} /> : <h1>No content</h1>}
-			</article>
-			<Footer siteSettings={siteSettings} />
-		</>
-	)
+    useEffect(() => {
+        if (window.location.href.includes('#open-booking-form')) {
+            setShowForm(true);
+        }
+    }, []);
+
+    return (
+        <>
+            <Head page={page} />
+            <Header showForm={showForm} setShowForm={setShowForm} />
+            {showForm && <BookingForm setShowForm={setShowForm} />}
+            <article>
+                {page ? <BlockRouter blocks={page.blocks} /> : <h1 style={{textAlign: 'center'}}>No content</h1>}
+            </article>
+            <Footer siteSettings={siteSettings} />
+        </>
+    )
 }
 
 /**
  * Gets the paths from sanity to build the pages from
  */
 export async function getStaticPaths() {
-	const paths = await client.fetch(
-		groq`*[_type == "page" && defined(slug.current)][].slug.current`)
+    const paths = await client.fetch(
+        groq`*[_type == "page" && defined(slug.current)][].slug.current`)
 
-	return {
-		paths: paths.map((slug) => ({ params: { slug } })),
-		fallback: true,
-	}
+    return {
+        paths: paths.map((slug) => ({ params: { slug } })),
+        fallback: true,
+    }
 }
 
 /**
  * Gets all the data for each page to build them
  */
 export async function getStaticProps(context) {
-	const { slug = "" } = context.params
+    const { slug = "" } = context.params
 
-	const page = await client.fetch(groq`*[_type == "page" && slug.current == $slug][0]{
-		title,
-		blocks,
-	}`, { slug })
+    const page = await client.fetch(groq`*[_type == "page" && slug.current == $slug][0]{
+        title,
+        blocks,
+    }`, { slug })
 
-	const siteSettings = await client.fetch(groq`*[_type == "siteSettings"][0]`);
+    const siteSettings = await client.fetch(groq`*[_type == "siteSettings"][0]`);
 
-	return {
-		props: {
-			page,
-			siteSettings,
-		}
-	}
+    return {
+        props: {
+            page,
+            siteSettings,
+        }
+    }
 }
 
 export default Page

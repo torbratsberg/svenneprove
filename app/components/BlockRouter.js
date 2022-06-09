@@ -3,6 +3,7 @@ import HeroBanner from '../blocks/HeroBanner';
 import TextAndImage from '../blocks/TextAndImage';
 import Carousel from '../blocks/Carousel';
 import TwoColumnText from '../blocks/TwoColumnText';
+import CenteredText from '../blocks/CenteredText';
 
 function BlockRouter({ blocks }) {
 
@@ -20,6 +21,8 @@ function BlockRouter({ blocks }) {
 						return <Carousel key={`block-${block._key}`} block={block} />
 					case 'twocolumntext':
 						return <TwoColumnText key={`block-${block._key}`} block={block} />
+					case 'centeredtext':
+						return <CenteredText key={`block-${block._key}`} block={block} />
 				}
 			})}
         </div>
