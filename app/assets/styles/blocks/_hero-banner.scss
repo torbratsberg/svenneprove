@@ -40,13 +40,13 @@
 
         h1 {
             @include dashedUnderline($light: true);
-            // width: max-content;
 
             span {
                 opacity: 1;
                 transition: all 0.3s ease-in-out;
                 display: inline-block;
                 white-space: nowrap;
+                font-weight: 600;
 
                 &.fade-out {
                     opacity: 0;

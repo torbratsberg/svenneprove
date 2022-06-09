@@ -1,10 +1,18 @@
 .Quotes {
+    margin: 50px 0;
+    padding: 0;
+
     .columns {
+        max-width: 60%;
+        margin: 50px 0;
+
         &:nth-of-type(odd) {
+            margin-right: auto;
             text-align: left;
         }
 
         &:nth-of-type(even) {
+            margin-left: auto;
             text-align: right;
         }
     }

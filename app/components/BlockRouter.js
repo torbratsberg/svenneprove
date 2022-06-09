@@ -27,7 +27,7 @@ function BlockRouter({ blocks }) {
 						return <CenteredText key={`block-${block._key}`} block={block} />
 					case 'keypoints':
 						return <KeyPoints key={`block-${block._key}`} block={block} />
-					case 'Quotes':
+					case 'quotes':
 						return <Quotes key={`block-${block._key}`} block={block} />
 				}
 			})}
