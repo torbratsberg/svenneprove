@@ -33,4 +33,17 @@ export default {
             ],
         },
     ],
+    preview: {
+        select: {
+            media: 'points',
+            title: 'points',
+        },
+        prepare(selection) {
+            const {title, media} = selection;
+            return {
+                media: media[0].image,
+                title: title.map(item => item.title).join(', ') + '...',
+            }
+        }
+    }
 }
