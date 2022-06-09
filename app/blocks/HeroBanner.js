@@ -36,7 +36,7 @@ function HeroBanner({ block }) {
 
     return (
         <div className="HeroBanner">
-			{block.image && <img src={urlFor(block.image).width(4000).auto('format')} alt="" />}
+			{block.image && <img src={urlFor(block.image).width(2000).auto('format')} alt="" />}
 
 			<div className="row">
 				<div className="column small-12 medium-8 large-5">
