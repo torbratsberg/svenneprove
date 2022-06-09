@@ -37,7 +37,7 @@ function Carousel({ block }) {
 						<div className="swiper-wrapper">
 							{block.images.map((slide, i) => slide && (
 								<div key={`${i}_carousel_img`} className="swiper-slide">
-                                    {slide.image && <img src={urlFor(slide.image).width(550).height(350).url()} alt="" />}
+                                    {slide.image && <img className="om fade-up" src={urlFor(slide.image).width(550).height(350).url()} alt="" />}
 								</div>
 							))}
 						</div>
