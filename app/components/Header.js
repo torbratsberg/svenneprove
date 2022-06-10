@@ -21,10 +21,10 @@ function Header({ showForm, setShowForm }) {
 
     const toggleMenu = () => {
         if (menuOpen) {
-            document.querySelector('header nav').style.display = 'none';
+            // document.querySelector('header nav').style.display = 'none';
             setMenuOpen(false);
         } else {
-            document.querySelector('header nav').style.display = 'block';
+            // document.querySelector('header nav').style.display = 'block';
             setMenuOpen(true);
         }
     }
@@ -43,17 +43,17 @@ function Header({ showForm, setShowForm }) {
                         { showForm == false ?
                             <>
                                 <button ref={menuToggler} onClick={toggleMenu} className="btn menu-toggler" aria-label="Toggle menu">Menu</button>
-                                <nav>
+                                <nav style={menuOpen ? {display: 'block'} : {}}>
                                     {pages && pages?.map(({ title = '', slug = ''}, i) => slug && (
                                         <Link key={i} href="/[slug]" as={`/${slug.current}`}>
-                                            <a className="underline">{title}</a>
+                                            <a onClick={() => setMenuOpen(false)} className="underline">{title}</a>
                                         </Link>
                                     ))}
-                                    <button className="btn" onClick={() => setShowForm(true)}>Book tid</button>
+                                    <button className="btn" onClick={() => { setShowForm(true); setMenuOpen(false)}}>Book tid</button>
                                 </nav>
                             </>
                         :
-                            <button className="btn" onClick={() => setShowForm(false)}>Lukk</button>
+                            <button className="btn" onClick={() => { setShowForm(false); setMenuOpen(false); }}>Lukk</button>
                         }
                     </div>
                 </div>
