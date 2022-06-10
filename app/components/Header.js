@@ -6,18 +6,18 @@ import client from '../client';
 import Logo from '../assets/images/logo.svg';
 
 function Header({ showForm, setShowForm }) {
-	const [pages, setPages] = useState(false);
-	const [menuOpen, setMenuOpen] = useState(false);
-	const menuToggler = createRef();
+    const [pages, setPages] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
+    const menuToggler = createRef();
 
-	useEffect(() => {
-		client.fetch(groq`*[_type == "page"] {
-			title,
-			slug,
-		}`).then((res) => {
-			setPages(res);
-		});
-	}, []);
+    useEffect(() => {
+        client.fetch(groq`*[_type == "page"] {
+            title,
+            slug,
+        }`).then((res) => {
+            setPages(res);
+        });
+    }, []);
 
     const toggleMenu = () => {
         if (menuOpen) {
@@ -27,19 +27,19 @@ function Header({ showForm, setShowForm }) {
             document.querySelector('header nav').style.display = 'block';
             setMenuOpen(true);
         }
-	}
+    }
 
     return (
         <header>
-			<div className="row">
-				<div className="header-inner column small-12">
-					<div className="right-container">
-						<Link aria-label="Go to front page" href="/" passHref as="/">
-							<img height="69px" width="69px" src={Logo.src} alt="Company logo" />
-						</Link>
-					</div>
+            <div className="row">
+                <div className="header-inner column small-12">
+                    <div className="right-container">
+                        <Link aria-label="Go to front page" href="/" passHref as="/">
+                            <img height="69px" width="69px" src={Logo.src} alt="Company logo" />
+                        </Link>
+                    </div>
 
-					<div className="left-container">
+                    <div className="left-container">
                         { showForm == false ?
                             <>
                                 <button ref={menuToggler} onClick={toggleMenu} className="btn menu-toggler" aria-label="Toggle menu">Menu</button>
@@ -55,9 +55,9 @@ function Header({ showForm, setShowForm }) {
                         :
                             <button className="btn" onClick={() => setShowForm(false)}>Lukk</button>
                         }
-					</div>
-				</div>
-			</div>
+                    </div>
+                </div>
+            </div>
         </header>
     );
 }

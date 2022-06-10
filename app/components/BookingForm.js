@@ -23,6 +23,7 @@ function BookingForm(props) {
     const [styles, setStyles] = useState({});
     const [times, setTimes] = useState(0);
     const [submitted, setSubmitted] = useState(0);
+    const [rando, setRando] = useState(Math.random());
     const form = createRef();
 
     useEffect(() => {
@@ -51,6 +52,12 @@ function BookingForm(props) {
             } else {
                 setTimes(--times);
             }
+        } else if (e.target.type == 'date') {
+            setRando(Math.random());
+            setTimes(0);
+            form.current.querySelectorAll('input[type="checkbox"]').forEach(item => {
+                item.checked = false;
+            });
         }
     }
 
@@ -103,7 +110,7 @@ function BookingForm(props) {
             <div className="inner-wrapper">
                 {submitted == false ?
                     <>
-                        <h2>Book tid</h2>
+                        <h2>Book tid på din egen arbeidsstasjon</h2>
                         <p className="required-explainer">* = Obligatorisk</p>
 
                         <form ref={form} onBlur={blurHandler} onChange={changeHandler} method="GET" onSubmit={(e) => e.preventDefault()}>
@@ -117,9 +124,9 @@ function BookingForm(props) {
 
                             <fieldset>
                                 <label><legend>Tidspunkt</legend></label>
-                                <InputField id="time-a" label="09:00 - 12:00" type="checkbox" />
-                                <InputField id="time-b" label="12:00 - 15:00" type="checkbox" />
-                                <InputField id="time-c" label="18:00 - 21:00" type="checkbox" />
+                                <InputField disabled={rando > 0.4} id="time-a" label="09:00 - 12:00" type="checkbox" />
+                                <InputField disabled={rando > 0.6} id="time-b" label="12:00 - 15:00" type="checkbox" />
+                                <InputField disabled={rando > 0.8} id="time-c" label="18:00 - 21:00" type="checkbox" />
                             </fieldset>
                         </form>
 
