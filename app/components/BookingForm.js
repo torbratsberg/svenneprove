@@ -110,7 +110,7 @@ function BookingForm(props) {
             <div className="inner-wrapper">
                 {submitted == false ?
                     <>
-                        <h2>Book tid på din egen arbeidsstasjon</h2>
+                        <h2>Book tid på en arbeidsstasjon</h2>
                         <p className="required-explainer">* = Obligatorisk</p>
 
                         <form ref={form} onBlur={blurHandler} onChange={changeHandler} method="GET" onSubmit={(e) => e.preventDefault()}>

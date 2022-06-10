@@ -3,10 +3,17 @@ $animation-speed: 0.7s;
 .om {
     transition: all $animation-speed ease-out;
 
-    // @media (prefers-reduced-motion) {
-    //     opacity: 1 !important;
-    //     transform: none !important;
-    // }
+    &:not(.dash) {
+        @media (max-width: 640px) {
+            opacity: 0 !important;
+            transform: translateY(15%) !important;
+
+            &.observed {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+        }
+    }
 
     &.fade-up {
         opacity: 0;
