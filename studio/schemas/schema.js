@@ -7,7 +7,6 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 // We import object and document schemas
 import link from './link';
 import page from './page';
-import hero from './hero';
 import herobanner from './herobanner';
 import textandimage from './textandimage';
 import carousel from './carousel';
@@ -23,7 +22,6 @@ export default createSchema({
 	types: schemaTypes.concat([
 		link,
 		page,
-		hero,
 		herobanner,
 		textandimage,
 		carousel,

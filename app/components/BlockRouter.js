@@ -1,4 +1,3 @@
-import Hero from '../blocks/Hero';
 import HeroBanner from '../blocks/HeroBanner';
 import TextAndImage from '../blocks/TextAndImage';
 import Carousel from '../blocks/Carousel';
@@ -13,8 +12,6 @@ function BlockRouter({ blocks }) {
         <div id="main">
 			{blocks && blocks.map(block => {
 				switch (block._type) {
-					case 'hero':
-						return <Hero key={`block-${block._key}`} block={block} />
 					case 'herobanner':
 						return <HeroBanner key={`block-${block._key}`} block={block} />
 					case 'textandimage':

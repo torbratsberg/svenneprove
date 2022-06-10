@@ -30,7 +30,6 @@ export default {
 			title: 'Blocks',
 			type: 'array',
 			of: [
-				{type: 'hero'},
 				{type: 'herobanner'},
 				{type: 'textandimage'},
 				{type: 'carousel'},
