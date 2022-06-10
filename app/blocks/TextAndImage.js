@@ -15,7 +15,7 @@ function TextAndImage({block}) {
 						</div>
 
 						<div className={`column small-12 medium-6 om fade-${block.reversed ? 'right' : 'left'}`}>
-							{block.image && <img src={urlFor(block.image).width(470).auto('format').url()} alt="" />}
+							{block.image && <img src={urlFor(block.image).width(640).auto('format').url()} alt="" />}
 						</div>
 					</div>
 				</div>

@@ -19,19 +19,15 @@ function Header({ showForm, setShowForm }) {
 		});
 	}, []);
 
-	useEffect(() => {
-		if (!menuToggler.current || window.innerWidth > 640) return;
-
-		menuToggler.current.addEventListener('click', () => {
-			if (menuOpen) {
-				document.querySelector('header nav').style.display = 'none';
-				setMenuOpen(false);
-			} else {
-				document.querySelector('header nav').style.display = 'block';
-				setMenuOpen(true);
-			}
-		});
-	}, [menuToggler.current]);
+    const toggleMenu = () => {
+        if (menuOpen) {
+            document.querySelector('header nav').style.display = 'none';
+            setMenuOpen(false);
+        } else {
+            document.querySelector('header nav').style.display = 'block';
+            setMenuOpen(true);
+        }
+	}
 
     return (
         <header>
@@ -46,7 +42,7 @@ function Header({ showForm, setShowForm }) {
 					<div className="left-container">
                         { showForm == false ?
                             <>
-                                <button ref={menuToggler} className="btn menu-toggler" aria-label="Toggle menu">Menu</button>
+                                <button ref={menuToggler} onClick={toggleMenu} className="btn menu-toggler" aria-label="Toggle menu">Menu</button>
                                 <nav>
                                     {pages && pages?.map(({ title = '', slug = ''}, i) => slug && (
                                         <Link key={i} href="/[slug]" as={`/${slug.current}`}>

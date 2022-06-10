@@ -49,6 +49,13 @@ header {
                     background: $white;
                 }
 
+                @media (max-width: 640px) {
+                    .btn {
+                        float: none;
+                        margin: 30px auto 0 auto;
+                    }
+                }
+
                 a {
                     margin-left: 20px;
                     display: block;

@@ -3,10 +3,10 @@ $animation-speed: 0.7s;
 .om {
     transition: all $animation-speed ease-out;
 
-    @media (prefers-reduced-motion) {
-        opacity: 1 !important;
-        transform: none !important;
-    }
+    // @media (prefers-reduced-motion) {
+    //     opacity: 1 !important;
+    //     transform: none !important;
+    // }
 
     &.fade-up {
         opacity: 0;

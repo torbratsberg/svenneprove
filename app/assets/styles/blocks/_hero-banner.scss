@@ -5,8 +5,8 @@
 	align-items: flex-end;
     margin: 0;
 
-	@media only screen and (max-width: 640px) {
-		min-height: 50vh;
+	@media (max-width: 640px) {
+		min-height: 60vh;
 	}
 
 	img {
@@ -40,6 +40,10 @@
 
         h1 {
             @include dashedUnderline($light: true);
+
+            @media (max-width: 640px) {
+                font-size: 28px;
+            }
 
             span {
                 opacity: 1;

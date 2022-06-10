@@ -6,12 +6,22 @@
 		&.reversed {
 			.row {
 				flex-direction: row-reverse;
-
-				@media only screen and (max-width: 640px) {
-					flex-direction: column !important;
-				}
 			}
 		}
+
+        .row {
+            @media (max-width: 640px) {
+            	flex-direction: column-reverse !important;
+
+                img {
+                    margin-bottom: 30px;
+                }
+
+                h2 {
+                    font-size: 24px;
+                }
+            }
+        }
 
         h2 {
             @include dashedUnderline();

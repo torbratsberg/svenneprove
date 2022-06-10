@@ -8,13 +8,13 @@ function Footer({ siteSettings }) {
         <footer>
 			<div className="top">
 				<div className="row">
-					<div className="column small-12 large-2 logo-wrapper">
+					<div className="column small-6 large-2 logo-wrapper">
 						<Link aria-label="Go to front page" href="/" passHref as="/">
 							<img height="62px" width="142px" src={Logo.src} alt="Company logo" />
 						</Link>
 					</div>
 
-					<div className="column small-12 large-3 contact-info">
+					<div className="column small-6 large-3 contact-info">
                         {siteSettings.contactinfo && <p>{siteSettings.contactinfo}</p>}
 					</div>
 
@@ -32,7 +32,7 @@ function Footer({ siteSettings }) {
 
 			<div className="bottom">
 				<div className="row">
-					<div className="column small-12 flex-between">
+					<div className="column small-12 bottom-links-wrapper">
 						{siteSettings?.links && siteSettings.links.map((item, i) => item && (
 							<Link key={i} href={item.url}>{item.label}</Link>
 						))}

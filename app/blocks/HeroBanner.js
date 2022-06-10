@@ -6,6 +6,8 @@ function HeroBanner({ block }) {
     const holder = createRef();
 
     useEffect(() => {
+        if (!block.words || block.words.length == 0) return;
+
         holder.current.innerText = block.words[0];
 
         let i = 0;
@@ -40,7 +42,7 @@ function HeroBanner({ block }) {
 
 			<div className="row">
 				<div className="column small-8 large-6">
-					{block.title && <h1 className="om dash">{block.title} <span ref={holder}></span></h1>}
+					{block.title && <h1 className="om dash">{block.title}<br /><span ref={holder}></span></h1>}
 					{block.text && <p>{block.text}</p>}
 					{block.link && <Link href={block.link.url}>{block.link.label}</Link>}
 				</div>

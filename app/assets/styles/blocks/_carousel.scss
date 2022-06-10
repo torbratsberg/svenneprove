@@ -2,13 +2,23 @@
     overflow: hidden;
     padding-bottom: 3px;
     background: $light-blue;
-    padding: 90px 0;
+    padding: 90px 0 0px 0;
+
+    @media (max-width: 640px) {
+        padding: 60px 0 0 0;
+    }
 
     .title-col {
         display: flex;
-        align-items: center;
+        align-items: baseline;
         justify-content: space-between;
         margin-bottom: 20px;
+
+        h2 {
+            @media (max-width: 640px) {
+                font-size: 24px;
+            }
+        }
 
         > div {
             width: 50%;
