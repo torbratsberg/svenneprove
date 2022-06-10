@@ -21,10 +21,8 @@ function Header({ showForm, setShowForm }) {
 
     const toggleMenu = () => {
         if (menuOpen) {
-            // document.querySelector('header nav').style.display = 'none';
             setMenuOpen(false);
         } else {
-            // document.querySelector('header nav').style.display = 'block';
             setMenuOpen(true);
         }
     }
