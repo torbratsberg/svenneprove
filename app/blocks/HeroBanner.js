@@ -39,7 +39,7 @@ function HeroBanner({ block }) {
 			{block.image && <img src={urlFor(block.image).width(2000).auto('format')} alt="" />}
 
 			<div className="row">
-				<div className="column small-12 medium-8 large-6">
+				<div className="column small-8 large-6">
 					{block.title && <h1 className="om dash">{block.title} <span ref={holder}></span></h1>}
 					{block.text && <p>{block.text}</p>}
 					{block.link && <Link href={block.link.url}>{block.link.label}</Link>}
