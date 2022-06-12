@@ -123,7 +123,7 @@ function BookingForm(props) {
                             <InputField required={true} id="dato" label="Dato" type="date" />
 
                             <fieldset>
-                                <label><legend>Tidspunkt</legend></label>
+                                <label><legend>Tidspunkt *</legend></label>
                                 <InputField disabled={rando > 0.4} id="time-a" label="09:00 - 12:00" type="checkbox" />
                                 <InputField disabled={rando > 0.6} id="time-b" label="12:00 - 15:00" type="checkbox" />
                                 <InputField disabled={rando > 0.8} id="time-c" label="18:00 - 21:00" type="checkbox" />

@@ -6,7 +6,7 @@ function getDate() {
 export default function Field({id, label, type = 'text', required = false, disabled = false}) {
     return (
         <div>
-            <label htmlFor={id}>{label} {required ? '*' : ''}</label>
+            <label htmlFor={id}>{`${label} ${required ? '*' : ''}`}</label>
             <input
                 id={id}
                 type={type}
