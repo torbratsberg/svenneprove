@@ -64,15 +64,21 @@ function BookingForm(props) {
         text: (input) => {
             if (input.value == '') return 'Tomt felt';
         },
+        tel: (input) => {
+            if (input.value == '') return 'Tomt felt';
+            if ((/[a-zA-Z]/g).test(input.value)) return 'Ikke ett gyldig nummer';
+            if (!(/([0-9]([ ])?){8}/g).test(input.value)) return 'Ikke ett gyldig nummer';
+        },
         email: (input) => {
             if (input.value == '') return 'Tomt felt';
             if (!(/.+@.+[.].+/g).test(input.value)) return 'Ikke en email adresse';
         },
         number: (input) => {
-            if (!input.value) return 'Ikke et tall';
+            if (!input.value) return 'Ikke ett tall';
         },
         date: (input) => {
             if (input.value == '') return 'Tomt felt';
+            if (new Date(input.value) < new Date()) return 'Dato har allerede vært'
         }
     }
 
@@ -114,7 +120,7 @@ function BookingForm(props) {
 
                         <form ref={form} onBlur={blurHandler} onChange={changeHandler} method="GET" onSubmit={(e) => e.preventDefault()}>
                             <InputField required={true} id="navn" label="Navn" />
-                            <InputField required={true} id="telefon" label="Telefon" />
+                            <InputField required={true} id="telefon" label="Telefon" type="tel" />
                             <InputField required={true} id="email" label="Email" type="email" />
                             <InputField required={true} id="alder" label="Alder" type="number"/>
                             <InputField required={true} id="adresse" label="Adresse" />
