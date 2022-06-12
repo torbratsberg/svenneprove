@@ -31,13 +31,13 @@ function Header({ showForm, setShowForm }) {
         <header>
             <div className="row">
                 <div className="header-inner column small-12">
-                    <div className="right-container">
+                    <div className="left-container">
                         <Link aria-label="Go to front page" href="/" passHref as="/">
-                            <img height="69px" width="69px" src={Logo.src} alt="Company logo" />
+                            <img src={Logo.src} alt="Company logo" />
                         </Link>
                     </div>
 
-                    <div className="left-container">
+                    <div className="right-container">
                         { showForm == false ?
                             <>
                                 <button ref={menuToggler} onClick={toggleMenu} className="btn menu-toggler" aria-label="Toggle menu">Menu</button>
