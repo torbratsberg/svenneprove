@@ -4,6 +4,8 @@ import Logo from '../assets/images/logo.svg';
 function Footer({ siteSettings }) {
     if (!siteSettings) return <h1 style={{textAlign: 'center'}}>No content</h1>;
 
+    console.log(siteSettings.contactinfo);
+
     return (
         <footer>
 			<div className="top">
@@ -15,7 +17,7 @@ function Footer({ siteSettings }) {
 					</div>
 
 					<div className="column small-6 large-3 contact-info">
-                        {siteSettings.contactinfo && <p>{siteSettings.contactinfo}</p>}
+                        {siteSettings.contactinfo && <p dangerouslySetInnerHTML={{__html: siteSettings.contactinfo.replaceAll('\n', '<br />')}}></p>}
 					</div>
 
 					<div className="column small-12 large-7 right-wrapper">
