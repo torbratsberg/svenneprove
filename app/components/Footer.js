@@ -4,8 +4,6 @@ import Logo from '../assets/images/logo.svg';
 function Footer({ siteSettings }) {
     if (!siteSettings) return <h1 style={{textAlign: 'center'}}>No content</h1>;
 
-    console.log(siteSettings.contactinfo);
-
     return (
         <footer>
 			<div className="top">

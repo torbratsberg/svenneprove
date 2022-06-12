@@ -46,7 +46,6 @@ function BookingForm(props) {
 
     const changeHandler = (e) => {
         if (e.target.type == 'checkbox') {
-            console.log(e.target.checked);
             if (e.target.checked) {
                 setTimes(++times);
             } else {
