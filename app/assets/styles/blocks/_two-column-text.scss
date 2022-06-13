@@ -4,6 +4,10 @@
 	background: $light-blue;
 	color: $black;
 
+    @media (max-width: 640px) {
+        padding: 50px 0;
+    }
+
     h2 {
         @include dashedUnderline();
     }

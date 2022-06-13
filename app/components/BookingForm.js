@@ -41,6 +41,7 @@ function BookingForm(props) {
 
         return () => {
             document.body.style.overflow = 'auto';
+            setStyles({});
         }
     }, []);
 
